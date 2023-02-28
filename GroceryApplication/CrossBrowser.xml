@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="MyTestSuite" configfailurepolicy="skip">
+	<test name="ChromeTest">
+	<parameter name="browser" value="Chrome"></parameter>
+		<classes>
+			<class name="testCases.LoginPageTestCases"></class>
+		</classes>
+	</test>
+	<test name="EdgeTest">
+	<parameter name="browser" value="Edge"></parameter>
+		<classes>
+			<class name="testCases.LoginPageTestCases"></class>
+		</classes>
+	</test>
+</suite>
