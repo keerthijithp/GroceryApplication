@@ -15,6 +15,7 @@ public class ListPagesTestCases extends BaseClass {
 	LoginPage lp;
 	ListPage list;
 	/*
+
   @Test
   public void verifyTheFunctionalityOfsearchButton() {
 	  lp=new LoginPage(driver);
@@ -30,9 +31,11 @@ public class ListPagesTestCases extends BaseClass {
 	  String expected="Make A Trip15_02_2023_07_34_31";
 	  Assert.assertEquals(actualResult, expected,Constant.ASSERTIONERRORMESSAGE);
 	
-  }*/
+  }
+  */
+  
   @Test
-  public void verifyAdminCanAddNewPages() throws AWTException {
+  public void verifyAdminCanAddNewPages() throws AWTException, InterruptedException {
 	  lp=new LoginPage(driver);
 	  ap=new AdminHomePage(driver);
 	  list=new ListPage(driver);
@@ -44,8 +47,10 @@ public class ListPagesTestCases extends BaseClass {
 	  list.enterTitle1("SampleTEstData");
 	  list.enterDescription("abcd");
 	  list.enterPageName("Test");
+	  //list.clickOnchooseButton();
 	  list.uploadImage();
-	  list.clickSaveButton();
-	  
+	  String actualResult= list.clickSaveButton();
+	  String expectedResult=" ×\n"+"Alert!\n"+"Page Created Successfully";
+	  Assert.assertEquals(actualResult, expectedResult,Constant.ASSERTIONERRORMESSAGE);
   }
 }

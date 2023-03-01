@@ -40,6 +40,9 @@ public class ListPage {
 	@FindBy(id="page")
 	WebElement pageName;
 	
+	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
+	WebElement alert;
+	
 	@FindBy(id="main_img")
 	WebElement chooseFile;
 	@FindBy(xpath="//button[@name='create']")
@@ -74,12 +77,20 @@ public class ListPage {
 	public void enterPageName(String s) {
 		pageName.sendKeys(s);
 	}
+	public void clickOnchooseButton() {
+		chooseFile.click();
+	}
 	public void uploadImage() throws AWTException {
-		gu.uploadFile(driver, chooseFile, System.getenv("user.dir")+"GroceryApplication\\src\\main\\resources");
+		gu.uploadFile(driver, chooseFile, System.getProperty("user.dir")+"\\src\\main\\resources\\UploadImages\\cat.jpg");
 		
 	}
-	public void clickSaveButton() {
+	public String clickSaveButton() throws InterruptedException {
 		saveButton.click();
+		Thread.sleep(2000);
+		driver.navigate().back();
+		Thread.sleep(2000);
+		return gu.getElementText(alert);
 	}
+	
 	
 }

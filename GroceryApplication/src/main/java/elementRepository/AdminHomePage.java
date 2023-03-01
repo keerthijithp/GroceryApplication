@@ -26,12 +26,17 @@ public class AdminHomePage {
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/expense-category']")
 	WebElement expenceCategory;
 	
+	@FindBy(xpath="//h1[text()='Expense Category']")
+	WebElement pageObject;
+	
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-merchant']")
 	WebElement createMerchant;
 	
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-page']//i[@class='fas fa-arrow-circle-right']")
 	WebElement managePages;
 	
+	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']//i[@class='fas fa-arrow-circle-right']")
+	WebElement adminUser;
 	public void clickOnAdmin() {
 		admin.click();
 	}
@@ -45,7 +50,7 @@ public class AdminHomePage {
 	}
 	public String clickOnExpenceCategoryTab() {
 		expenceCategory.click();
-		return  driver.getTitle();
+		return  gu.getElementText(pageObject);
 	}
 	public String clickOnCreateMerchantTab() {
 		createMerchant.click();
@@ -56,6 +61,9 @@ public class AdminHomePage {
 	public String clickOnManagePages() {
 		managePages.click();
 		return driver.getCurrentUrl();
+	}
+	public void clickOnAdminUserTab() {
+		adminUser.click();
 	}
 }
 

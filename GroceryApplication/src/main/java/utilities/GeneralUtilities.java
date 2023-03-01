@@ -5,6 +5,7 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -48,9 +49,10 @@ public class GeneralUtilities {
 		Robot r=new Robot();
 		Actions act=new Actions(driver);
 		act.moveToElement(element).click().perform();
-		StringSelection ss=new StringSelection(filePath);
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
-		r.keyPress(KeyEvent.VK_CONTROL);
+		StringSelection ss = new StringSelection(filePath);
+	    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+	    r.delay(500);;
+	    r.keyPress(KeyEvent.VK_CONTROL);
 	    r.keyPress(KeyEvent.VK_V);
 	    r.delay(250);
 	    r.keyRelease(KeyEvent.VK_CONTROL);
@@ -59,6 +61,18 @@ public class GeneralUtilities {
 	    r.keyPress(KeyEvent.VK_ENTER);//After pasting press enter key or open tab
 	    r.keyRelease(KeyEvent.VK_ENTER);
 		
+	}
+	public int getTableLocatorValue(List<WebElement> element, String text) {
+		int index=0;
+		for(int i=0;i<element.size();i++) {
+			if(element.get(i).getText().equals(text)) {
+				index=i;
+				break;
+			}
+			
+		}
+		return index;
+
 	}
 	
 	
