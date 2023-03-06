@@ -2,6 +2,7 @@ package elementRepository;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,10 +28,13 @@ public class AdminUsersPage {
 	WebElement password;
 	@FindBy(id="user_type")
 	WebElement useType;
-	@FindBy(xpath="//button[@type='submit']//i[@class='fa fa-save']")
+	@FindBy(xpath="//button[@name='Create']")
 	WebElement saveButton;
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']")
 	WebElement alert;
+	@FindBy(xpath="//table[@class='table table-bordered table-hover table-sm']//tbody//tr//td//i[@class='fas fa-trash-alt']")
+	WebElement delete;
+	
 	
 	public String getLocator() {
 		int index=gu.getTableLocatorValue(userName, "dav24_02_2023_10_07_21");
@@ -40,19 +44,31 @@ public class AdminUsersPage {
 	public void clickOnNewButton() {
 		newButton.click();
 	}
-	public void enterUserName() {
-		username.sendKeys("Keerthidddd");
+	public void enterUserName(String s) {
+		username.sendKeys(s);
 		
 	}
-	public void enterPassword() {
-		password.sendKeys("123");
+	public void enterPassword(String s) {
+		password.sendKeys(s);
 	}
-	public String selectUserTypeFromDropDown() {
-		return gu.selectValueFromDropDown(useType, "admin");
+	public String selectUserTypeFromDropDown(String type) {
+		return gu.selectValueFromDropDown(useType, type);
 	}
-	public String clickSaveButton() {
+	public String clickSaveButton() throws InterruptedException {
+		Thread.sleep(3000);
 		saveButton.click();
 		return gu.getTextOfWebElement(alert);
+	}
+	public String clickOnDeleteButton() throws InterruptedException {
+		int index=gu.getTableLocatorValue(userName, "aaaa");
+		String locator="//table[@class='table table-bordered table-hover table-sm']//tbody//tr["+(index+1)+"]//td//i[@class='fas fa-trash-alt']";
+		WebElement deleteButton=driver.findElement(By.xpath(locator));
+		Thread.sleep(3000);
+		deleteButton.click();
+		driver.switchTo().alert().accept();
+		Thread.sleep(3000);
+		return gu.getTextOfWebElement(alert);
+		
 	}
 }
 

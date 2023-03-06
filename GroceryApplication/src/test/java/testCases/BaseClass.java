@@ -25,15 +25,11 @@ public class BaseClass {
 		FileInputStream ip=new FileInputStream("C:\\Users\\SOORAJ\\eclipse-workspace\\GroceryApplication\\src\\main\\resources\\Config.properties");
 		prop.load(ip);
 	}
-	
-	
-	
-	
-
 
 	WebDriver driver;
 	
 	 @BeforeMethod(alwaysRun=true)
+	 
 	 @Parameters("browser")
 	 public void beforeMethod(String browserName) throws IOException {
 		 testBasic();

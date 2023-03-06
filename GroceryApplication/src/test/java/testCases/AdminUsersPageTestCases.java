@@ -33,9 +33,9 @@ public class AdminUsersPageTestCases extends BaseClass {
 		String expectedResult="Active";
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTIONERRORMESSAGE);
 		
-  }*/
+  }
 	@Test
-  public void verifyAdminCanAddNewAdminUsers() throws IOException {
+  public void verifyAdminCanAddNewAdminUsers() throws IOException, InterruptedException {
 	  ap = new AdminHomePage(driver);
 		lp = new LoginPage(driver);
 		aup=new AdminUsersPage(driver);
@@ -44,13 +44,26 @@ public class AdminUsersPageTestCases extends BaseClass {
 		lp.clickLoginButton();
 		ap.clickOnAdminUserTab();
 		aup.clickOnNewButton();
-		aup.enterUserName();
-		aup.enterPassword();
-		aup.selectUserTypeFromDropDown();
-		aup.clickSaveButton();
+		aup.enterUserName("arfddxXxfdaaa");
+		aup.enterPassword("sssss");
+		aup.selectUserTypeFromDropDown("admin");
 		String actualResult=aup.clickSaveButton();
-		String expectedResult=" ×\n"+"Alert!\n"+"User Created Successfully";
+		String expectedResult="×\n"+"Alert!\n"+"User Created Successfully";
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTIONERRORMESSAGE);
 	  
+  }
+  */
+  @Test
+  public void verifyifAdminCAnDeleteUsers() throws IOException, InterruptedException {
+	  	ap = new AdminHomePage(driver);
+		lp = new LoginPage(driver);
+		aup=new AdminUsersPage(driver);
+		lp.enterUserName(ExcelRead.readStringData("Sheet1", 1, 0));
+		lp.enterPassword(ExcelRead.readStringData("Sheet1", 1, 1));
+		lp.clickLoginButton();
+		ap.clickOnAdminUserTab();
+		String actualResult=aup.clickOnDeleteButton();
+		String expectedResult="×\n"+"Alert!\n"+"User Deleted Successfully";
+		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTIONERRORMESSAGE);
   }
 }
