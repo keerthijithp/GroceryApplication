@@ -17,7 +17,7 @@ public class AdminUsersPageTestCases extends BaseClass {
 	AdminHomePage ap;
 	LoginPage lp;
 	AdminUsersPage aup;
-	/*
+	
   @Test
   public void verifyTheStatusOfAdminUsers() throws IOException {
 	  	ap = new AdminHomePage(driver);
@@ -44,7 +44,7 @@ public class AdminUsersPageTestCases extends BaseClass {
 		lp.clickLoginButton();
 		ap.clickOnAdminUserTab();
 		aup.clickOnNewButton();
-		aup.enterUserName("arfddxXxfdaaa");
+		aup.enterUserName("zcsz");
 		aup.enterPassword("sssss");
 		aup.selectUserTypeFromDropDown("admin");
 		String actualResult=aup.clickSaveButton();
@@ -52,7 +52,8 @@ public class AdminUsersPageTestCases extends BaseClass {
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTIONERRORMESSAGE);
 	  
   }
-  */
+	
+  
   @Test
   public void verifyifAdminCAnDeleteUsers() throws IOException, InterruptedException {
 	  	ap = new AdminHomePage(driver);
@@ -66,4 +67,5 @@ public class AdminUsersPageTestCases extends BaseClass {
 		String expectedResult="×\n"+"Alert!\n"+"User Deleted Successfully";
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTIONERRORMESSAGE);
   }
+  
 }

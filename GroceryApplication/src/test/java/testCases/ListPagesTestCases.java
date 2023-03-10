@@ -14,7 +14,7 @@ public class ListPagesTestCases extends BaseClass {
 	AdminHomePage ap;
 	LoginPage lp;
 	ListPage list;
-	/*
+	
 
   @Test
   public void verifyTheFunctionalityOfsearchButton() {
@@ -32,7 +32,7 @@ public class ListPagesTestCases extends BaseClass {
 	  Assert.assertEquals(actualResult, expected,Constant.ASSERTIONERRORMESSAGE);
 	
   }
-  */
+  
   
   @Test
   public void verifyAdminCanAddNewPages() throws AWTException, InterruptedException {
@@ -50,7 +50,7 @@ public class ListPagesTestCases extends BaseClass {
 	  //list.clickOnchooseButton();
 	  list.uploadImage();
 	  String actualResult= list.clickSaveButton();
-	  String expectedResult=" ×\n"+"Alert!\n"+"Page Created Successfully";
+	  String expectedResult="×\n"+"Alert!\n"+"Page Created Successfully";
 	  Assert.assertEquals(actualResult, expectedResult,Constant.ASSERTIONERRORMESSAGE);
   }
 }

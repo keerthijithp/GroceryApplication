@@ -47,11 +47,11 @@ public class LoginPageTestCases extends BaseClass {
 	 Assert.assertEquals(actualUrl, expectedURL,Constant.ASSERTIONERRORMESSAGE);
  }
   
-  @Test(groups = {"High"} )
- public void verifyLoginWithInvalidCredentials() {
+  @Test(dataProvider="dataProvider",dataProviderClass=DataProviderLoginPageTest.class)
+ public void verifyLoginWithInvalidCredentials(String user,String pswd) {
 	  lp=new LoginPage(driver);
-		 lp.enterUserName("keerthi");
-		 lp.enterPassword("qwerty");
+		 lp.enterUserName(user);
+		 lp.enterPassword(pswd);
 		 lp.clickLoginButton();
 	 
 	 String actalResult=lp.loginwithInvalidCredentials();

@@ -85,7 +85,7 @@ public class ListPage {
 		
 	}
 	public String clickSaveButton() throws InterruptedException {
-		saveButton.click();
+		saveButton.submit();
 		Thread.sleep(2000);
 		driver.navigate().back();
 		Thread.sleep(2000);

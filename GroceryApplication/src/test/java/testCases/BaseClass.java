@@ -22,7 +22,7 @@ public class BaseClass {
 	
 	public static void testBasic() throws IOException {
 		prop=new Properties();
-		FileInputStream ip=new FileInputStream("C:\\Users\\SOORAJ\\eclipse-workspace\\GroceryApplication\\src\\main\\resources\\Config.properties");
+		FileInputStream ip=new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\resources\\Config.properties");
 		prop.load(ip);
 	}
 

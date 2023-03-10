@@ -13,7 +13,7 @@ import utilities.ExcelRead;
 public class AdminPageTestCases extends BaseClass {
 	AdminHomePage ap;
 	LoginPage lp;
-/*
+
 	@Test
 	public void verifyLogoutButton() throws IOException {
 		ap = new AdminHomePage(driver);
@@ -53,7 +53,7 @@ public class AdminPageTestCases extends BaseClass {
 		
 		
 	}
-	*/
+	
 	@Test
 	public void verifyAdminCanaccesCreateMerchantTab() throws IOException {
 		ap = new AdminHomePage(driver);
@@ -63,7 +63,7 @@ public class AdminPageTestCases extends BaseClass {
 		lp.clickLoginButton();
 		ap.clickOnManageExpenceTab();
 		String actualResult = ap.clickOnCreateMerchantTab();
-		String expectedResult="Create Merchant | 7rmart supermarket";
+		String expectedResult="List Expense | 7rmart supermarket";
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTIONERRORMESSAGE);
 	}
 	

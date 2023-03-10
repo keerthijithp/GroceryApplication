@@ -60,7 +60,7 @@ public class AdminUsersPage {
 		return gu.getTextOfWebElement(alert);
 	}
 	public String clickOnDeleteButton() throws InterruptedException {
-		int index=gu.getTableLocatorValue(userName, "aaaa");
+		int index=gu.getTableLocatorValue(userName, "nnnn");
 		String locator="//table[@class='table table-bordered table-hover table-sm']//tbody//tr["+(index+1)+"]//td//i[@class='fas fa-trash-alt']";
 		WebElement deleteButton=driver.findElement(By.xpath(locator));
 		Thread.sleep(3000);

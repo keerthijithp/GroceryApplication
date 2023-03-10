@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="My Test Suite" configfailurepolicy="skip">
+<listeners>
+<listener class-name="utilities.ExtentReportUtils" />
+</listeners>
+<test name="My Test">
+<parameter name="browser" value="Chrome"></parameter>
+<classes>
+<class name="testCases.LoginPageTestCases" />
+<class name="testCases.AdminPageTestCases" />
+<class name="testCases.AdminUsersPageTestCases" />
+<class name="testCases.PushNotificationTestCases" />
+<class name="testCases.ListPagesTestCases" />
+<class name="testCases.ManageOfferCodeTestCases" />
+<class name="testCases.ManageOrderPageTestCases" />
+
+
+</classes>
+</test>
+</suite>
+

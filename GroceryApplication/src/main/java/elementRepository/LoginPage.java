@@ -77,7 +77,7 @@ public class LoginPage {
 	}
 	
 	public String getBackgroundColorOfSignIN() {
-		return gu.getBackgroundColourOfaButton(signInButton);
+		return gu.getBackgroundColourOfaButton(signInButton,"background-color");
 	}
 	public String getTextOf7MartSuperMarket() {
 		

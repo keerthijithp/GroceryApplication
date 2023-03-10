@@ -38,8 +38,8 @@ public class GeneralUtilities {
 		String text=element.getText();
 		return text;
 	}
-	public String getBackgroundColourOfaButton(WebElement element) {
-		String bgColor=element.getCssValue("background-color");
+	public String getBackgroundColourOfaButton(WebElement element, String value) {
+		String bgColor=element.getCssValue(value);
 		//return bgColor;
 		String actual=Color.fromString(bgColor).asHex();
 		return actual;
