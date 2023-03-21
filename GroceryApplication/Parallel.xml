@@ -1,12 +1,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="MyTestSuite" parallel="tests" thread-count="2">
-	<test name="ChromeTest">
+<listeners>
+<listener class-name="utilities.ExtentReportUtils" />
+</listeners>
+	<test name="SmokeTest">
 	<parameter name="browser" value="Chrome"></parameter>
 		<classes>
-			<class name="testCases.LoginPageTestCases"></class>
+			<class name="testCases.LoginPageTestCases">
+			
+			</class>
 		</classes>
 	</test>
-	<test name="EdgeTest">
+	<test name="SanityTest">
 	<parameter name="browser" value="Edge"></parameter>
 		<classes>
 			<class name="testCases.LoginPageTestCases"></class>

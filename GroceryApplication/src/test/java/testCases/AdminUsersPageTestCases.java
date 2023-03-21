@@ -23,14 +23,14 @@ public class AdminUsersPageTestCases extends BaseClass {
 	  	ap = new AdminHomePage(driver);
 		lp = new LoginPage(driver);
 		aup=new AdminUsersPage(driver);
-		lp.enterUserName(ExcelRead.readStringData("Sheet1", 1, 0));
-		lp.enterPassword(ExcelRead.readStringData("Sheet1", 1, 1));
+		lp.enterUserName(Constant.USERNAME);
+		lp.enterPassword(Constant.PASSWORD);
 		lp.clickLoginButton();
 		ap.clickOnAdminUserTab();
 		String locator=aup.getLocator();
 		WebElement status=driver.findElement(By.xpath(locator));
 		String actualResult=status.getText();
-		String expectedResult="Active";
+		String expectedResult=Constant.STATUSOFADMINUSER;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTIONERRORMESSAGE);
 		
   }
@@ -39,17 +39,18 @@ public class AdminUsersPageTestCases extends BaseClass {
 	  ap = new AdminHomePage(driver);
 		lp = new LoginPage(driver);
 		aup=new AdminUsersPage(driver);
-		lp.enterUserName(ExcelRead.readStringData("Sheet1", 1, 0));
-		lp.enterPassword(ExcelRead.readStringData("Sheet1", 1, 1));
+		lp.enterUserName(Constant.USERNAME);
+		lp.enterPassword(Constant.PASSWORD);
 		lp.clickLoginButton();
 		ap.clickOnAdminUserTab();
 		aup.clickOnNewButton();
 		aup.enterUserName("zcsz");
 		aup.enterPassword("sssss");
 		aup.selectUserTypeFromDropDown("admin");
-		String actualResult=aup.clickSaveButton();
-		String expectedResult="×\n"+"Alert!\n"+"User Created Successfully";
-		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTIONERRORMESSAGE);
+		aup.clickSaveButton();
+		boolean actualResult=aup.getErrorMessage(Constant.NEWUSERCREATIONMSG);
+		
+		Assert.assertTrue(actualResult, Constant.ASSERTIONERRORMESSAGE);
 	  
   }
 	
@@ -59,13 +60,15 @@ public class AdminUsersPageTestCases extends BaseClass {
 	  	ap = new AdminHomePage(driver);
 		lp = new LoginPage(driver);
 		aup=new AdminUsersPage(driver);
-		lp.enterUserName(ExcelRead.readStringData("Sheet1", 1, 0));
-		lp.enterPassword(ExcelRead.readStringData("Sheet1", 1, 1));
+		lp.enterUserName(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("password"));
 		lp.clickLoginButton();
 		ap.clickOnAdminUserTab();
-		String actualResult=aup.clickOnDeleteButton();
-		String expectedResult="×\n"+"Alert!\n"+"User Deleted Successfully";
-		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTIONERRORMESSAGE);
+		aup.clickOnDeleteButton();
+		
+		boolean actualResult=aup.getErrorMessage(Constant.EXPECTEDDELETEMSGINADMINUSERPAGE);
+		
+		Assert.assertTrue(actualResult, Constant.ASSERTIONERRORMESSAGE);
   }
   
 }

@@ -8,10 +8,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.GeneralUtilities;
+import utilities.RandomDataGenerartor;
 
 public class ListPage {
 	WebDriver driver;
 	GeneralUtilities gu=new GeneralUtilities();
+	RandomDataGenerartor rg=new RandomDataGenerartor();
 	public ListPage(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
@@ -48,6 +50,8 @@ public class ListPage {
 	@FindBy(xpath="//button[@name='create']")
 	WebElement saveButton;
 	
+	@FindBy(xpath="//a[@class='btn btn-rounded btn-warning']")
+	WebElement reset;
 	public void clickOnSearchButton() {
 		searchButton.click();
 	}
@@ -72,10 +76,14 @@ public class ListPage {
 		titleInNew.sendKeys(s);
 	}
 	public void enterDescription(String s) {
-		description.sendKeys(s);
+		String randomString=rg.randomPassword();
+		description.sendKeys(s+randomString);
 	}
 	public void enterPageName(String s) {
-		pageName.sendKeys(s);
+		String randomString=rg.randomPassword();
+		pageName.sendKeys(s+randomString);
+		
+		
 	}
 	public void clickOnchooseButton() {
 		chooseFile.click();
@@ -91,6 +99,12 @@ public class ListPage {
 		Thread.sleep(2000);
 		return gu.getElementText(alert);
 	}
-	
+	public String clickOnResetButton() {
+		return gu.getElementText(reset);
+	}
+	public boolean getErrorMessage(String text) {
+		boolean actual=gu.getExpectedResultAlert(alert, text);
+		return text.contains(text);
+	}
 	
 }

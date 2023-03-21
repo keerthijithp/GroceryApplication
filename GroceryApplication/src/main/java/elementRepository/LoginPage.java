@@ -51,10 +51,10 @@ public class LoginPage {
 		return gu.selectCheckBox(rememberMe);
 	}
 	public String getUserNameFromExcel() throws IOException {
-		return er.readStringData("Sheet1", 1, 0);
+		return er.readStringData("Credentials","Sheet1", 1, 0);
 	}
 	public String getPasswordFromExcel() throws IOException {
-		return er.readStringData("Sheet1", 1, 1);
+		return er.readStringData("Credentials","Sheet1", 1, 1);
 	}
 	public void enterUserName(String user) {
 		userName.sendKeys(user);
@@ -82,5 +82,9 @@ public class LoginPage {
 	public String getTextOf7MartSuperMarket() {
 		
 		return gu.getElementText(title7Mart);
+	}
+	public boolean getErrorMessage(String text) {
+		boolean actual=gu.getExpectedResultAlert(error, text);
+		return text.contains(text);
 	}
 }

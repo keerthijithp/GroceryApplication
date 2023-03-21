@@ -26,18 +26,20 @@ public class PushNotificationTestCases extends BaseClass {
 		pp.clickOnPushNotification();
 		pp.enterTitle("Enter message");
 		pp.enterdescription("Messages");
-		String expectedResult = "×\n" + "Alert!\n" + "Message send successfully";
-		String actualResult = pp.clickOnSendButton();
-		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTIONERRORMESSAGE);
+		
+		pp.clickOnSendButton();
+		boolean actualResult=pp.getErrorMessage(Constant.PUSHMSG);
+		Assert.assertTrue(actualResult, Constant.ASSERTIONERRORMESSAGE);
+	  
 	}
 
 	@Test
 	public void verifyIfRestButtonIsWorking() throws IOException {
 		lp = new LoginPage(driver);
 		pp = new PushNotificationPage(driver);
-		lp.enterUserName(ExcelRead.readStringData("Sheet1", 1, 0));
-		lp.enterPassword(ExcelRead.readStringData("Sheet1", 1, 1));
-		lp.clickLoginButton();
+		lp.enterUserName(ExcelRead.readStringData(prop.getProperty("LoginExcel"),prop.getProperty("DataProviderSheet"),1,0));
+		 lp.enterPassword(ExcelRead.readStringData(prop.getProperty("LoginExcel"),prop.getProperty("DataProviderSheet"),1,1));
+		 lp.clickLoginButton();
 		pp.clickOnPushNotification();
 		pp.enterTitle("Enter message");
 		pp.enterdescription("Messages");

@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="2" name="Failed suite [MyTestSuite]" parallel="tests">
-  <test thread-count="2" name="ChromeTest(failed)" parallel="tests">
+<suite name="Failed suite [MyTestSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="ChromeTest(failed)">
     <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="testCases.LoginPageTestCases">
+      <class name="testCases.ManageSliderPageTestCases">
         <methods>
-          <include name="verifyTheTextOfSignInButton"/>
-          <include name="verifyLoginWithValidCredentials"/>
           <include name="beforeMethod"/>
-          <include name="verifyTheBacgrooundColourOfSignInButton"/>
-          <include name="verifyCheckboxRemeneberMeIsSelected"/>
-          <include name="verifyLoginWithInvalidCredentials"/>
           <include name="afterMethod"/>
-          <include name="verifyTheTextOftitle7MartSupermarket"/>
+          <include name="verifyAdminCanChangeTheStatusOfALinkInManageSliderPage"/>
         </methods>
-      </class> <!-- testCases.LoginPageTestCases -->
+      </class> <!-- testCases.ManageSliderPageTestCases -->
     </classes>
   </test> <!-- ChromeTest(failed) -->
 </suite> <!-- Failed suite [MyTestSuite] -->

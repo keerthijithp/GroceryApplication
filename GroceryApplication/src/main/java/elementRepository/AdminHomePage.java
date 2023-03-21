@@ -37,6 +37,9 @@ public class AdminHomePage {
 	
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']//i[@class='fas fa-arrow-circle-right']")
 	WebElement adminUser;
+	
+	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-deliveryboy']//i[@class='fas fa-arrow-circle-right']")
+	WebElement manageDeliveryBoy;
 	public void clickOnAdmin() {
 		admin.click();
 	}
@@ -64,6 +67,9 @@ public class AdminHomePage {
 	}
 	public void clickOnAdminUserTab() {
 		adminUser.click();
+	}
+	public void clickOnManageDeliveryBoy() {
+		manageDeliveryBoy.click();
 	}
 }
 

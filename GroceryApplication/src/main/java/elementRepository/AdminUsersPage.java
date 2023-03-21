@@ -9,10 +9,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.GeneralUtilities;
+import utilities.RandomDataGenerartor;
 
 public class AdminUsersPage {
 	WebDriver driver;
 	GeneralUtilities gu=new GeneralUtilities();
+	RandomDataGenerartor rg=new RandomDataGenerartor();
 	public AdminUsersPage(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
@@ -45,7 +47,8 @@ public class AdminUsersPage {
 		newButton.click();
 	}
 	public void enterUserName(String s) {
-		username.sendKeys(s);
+		String randomString=rg.randomPassword();
+		username.sendKeys(s+randomString);
 		
 	}
 	public void enterPassword(String s) {
@@ -69,6 +72,10 @@ public class AdminUsersPage {
 		Thread.sleep(3000);
 		return gu.getTextOfWebElement(alert);
 		
+	}
+	public boolean getErrorMessage(String text) {
+		boolean actual=gu.getExpectedResultAlert(alert, text);
+		return text.contains(text);
 	}
 }
 

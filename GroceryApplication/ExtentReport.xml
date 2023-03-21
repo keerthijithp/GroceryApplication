@@ -7,12 +7,16 @@
 <parameter name="browser" value="Chrome"></parameter>
 <classes>
 <class name="testCases.LoginPageTestCases" />
-<class name="testCases.AdminPageTestCases" />
-<class name="testCases.AdminUsersPageTestCases" />
-<class name="testCases.PushNotificationTestCases" />
-<class name="testCases.ListPagesTestCases" />
-<class name="testCases.ManageOfferCodeTestCases" />
-<class name="testCases.ManageOrderPageTestCases" />
+<class name="testCases.AdminUsersPageTestCases"/>
+<class name="testCases.ListPagesTestCases"/>
+<class name="testCases.ManageDeliveryBoyPageTestCases"/>
+<class name="testCases.ManageOfferCodeTestCases"/>
+<class name="testCases.ManageSliderPageTestCases"/>
+<class name="testCases.PushNotificationTestCases"/>
+<class name="testCases.ManageOrderPageTestCases"/>
+<class name="testCases.AdminPageTestCases"/>
+
+
 
 
 </classes>

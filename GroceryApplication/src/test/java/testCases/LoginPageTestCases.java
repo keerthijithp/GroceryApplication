@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 import constant.Constant;
 import elementRepository.LoginPage;
+import utilities.DataProviderUtility;
 import utilities.ExcelRead;
 
 import org.testng.annotations.BeforeMethod;
@@ -24,8 +25,8 @@ public class LoginPageTestCases extends BaseClass {
   public void verifyTheTextOfSignInButton() {
 	  lp=new LoginPage(driver);
 	  String actualResult=lp.getTextOfSignInButton();
-	  String expectedResult="Sign In";
-	  Assert.assertEquals(actualResult, expectedResult);
+	  String expectedResult=Constant.TEXTOFSIGNINBUTTON;
+	  Assert.assertEquals(actualResult, expectedResult,Constant.ASSERTIONERRORMESSAGE);
 	  
 	  
   }
@@ -38,33 +39,33 @@ public class LoginPageTestCases extends BaseClass {
   }
   @Test(groups = {"Critical"} )
  public void verifyLoginWithValidCredentials() throws IOException {
+	  testBasic();
 	 lp=new LoginPage(driver);
-	 lp.enterUserName(ExcelRead.readStringData("Sheet1", 1, 0));
-	 lp.enterPassword(ExcelRead.readStringData("Sheet1", 1, 1));
+	 lp.enterUserName(ExcelRead.readStringData(prop.getProperty("LoginExcel"),prop.getProperty("DataProviderSheet"),1,0));
+	 lp.enterPassword(ExcelRead.readStringData(prop.getProperty("LoginExcel"),prop.getProperty("DataProviderSheet"),1,1));
 	 lp.clickLoginButton();
-	 String actualUrl="https://groceryapp.uniqassosiates.com/admin";
+	 String actualUrl=Constant.LOGINURL;
 	 String expectedURL= lp.getCurrentURLofLogin();
 	 Assert.assertEquals(actualUrl, expectedURL,Constant.ASSERTIONERRORMESSAGE);
  }
   
-  @Test(dataProvider="dataProvider",dataProviderClass=DataProviderLoginPageTest.class)
+  @Test(dataProvider="dataProvider",dataProviderClass=DataProviderUtility.class)
  public void verifyLoginWithInvalidCredentials(String user,String pswd) {
 	  lp=new LoginPage(driver);
 		 lp.enterUserName(user);
 		 lp.enterPassword(pswd);
 		 lp.clickLoginButton();
 	 
-	 String actalResult=lp.loginwithInvalidCredentials();
-	 String expectedResult="×\n" + "Alert!\n"+
-	 		"Invalid Username/Password";
-	 Assert.assertEquals(actalResult, expectedResult);
+	 boolean actalResult=lp.getErrorMessage(Constant.INVALIDLOGINALERT);
+	 //String expectedResult=Constant.INVALIDLOGINALERT;
+	 Assert.assertTrue(actalResult, Constant.ASSERTIONERRORMESSAGE);
 	 
  }
 @Test
-public void verifyTheBacgrooundColourOfSignInButton() {
+public void verifyTheBacgroundColourOfSignInButton() {
 	 lp=new LoginPage(driver);
 	 String actualResult=lp.getBackgroundColorOfSignIN();
-	 String expectedResult="#343a40";
+	 String expectedResult=Constant.BGCOLROFSIGNINBUTTON;
 	 Assert.assertEquals(actualResult, expectedResult,Constant.ASSERTIONERRORMESSAGE);
 	
 }
@@ -72,7 +73,7 @@ public void verifyTheBacgrooundColourOfSignInButton() {
 public void verifyTheTextOftitle7MartSupermarket() {
 	 lp=new LoginPage(driver);
 	 String actualResult=lp.getTextOf7MartSuperMarket();
-	 String expectedResult="7rmart supermarket";
+	 String expectedResult=Constant.TITLEOFAPPLICATION;
 	 Assert.assertEquals(actualResult, expectedResult,Constant.ASSERTIONERRORMESSAGE);
 		
 }

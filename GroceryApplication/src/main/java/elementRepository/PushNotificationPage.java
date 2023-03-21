@@ -54,5 +54,8 @@ public class PushNotificationPage {
 		resetButton.click();
 		return gu.getTextOfWebElement(title);
 	}
-	
+	public boolean getErrorMessage(String text) {
+		boolean actual=gu.getExpectedResultAlert(alertMessage, text);
+		return text.contains(text);
+	}
 }

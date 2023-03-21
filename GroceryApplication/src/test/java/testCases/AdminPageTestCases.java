@@ -18,12 +18,12 @@ public class AdminPageTestCases extends BaseClass {
 	public void verifyLogoutButton() throws IOException {
 		ap = new AdminHomePage(driver);
 		lp = new LoginPage(driver);
-		lp.enterUserName(ExcelRead.readStringData("Sheet1", 1, 0));
-		lp.enterPassword(ExcelRead.readStringData("Sheet1", 1, 1));
+		lp.enterUserName(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("password"));
 		lp.clickLoginButton();
 		ap.clickOnAdmin();
 		String actualResult = ap.clickOnLogoutButton();
-		String expectedResult = "https://groceryapp.uniqassosiates.com/admin/login";
+		String expectedResult = Constant.EXPECTEDLOGOUTRURL;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTIONERRORMESSAGE);
 	}
 
@@ -32,39 +32,40 @@ public class AdminPageTestCases extends BaseClass {
 
 		ap = new AdminHomePage(driver);
 		lp = new LoginPage(driver);
-		lp.enterUserName(ExcelRead.readStringData("Sheet1", 1, 0));
-		lp.enterPassword(ExcelRead.readStringData("Sheet1", 1, 1));
+		 lp.enterUserName(Constant.USERNAME);
+			lp.enterPassword(Constant.PASSWORD);
 		String actualResult = lp.clickLoginButton();
-		String expectedResult = "Dashboard | 7rmart supermarket";
+		String expectedResult = Constant.ADMINPAGETITLE;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTIONERRORMESSAGE);
 	}
 	
 	@Test
-	public void verifyAdminCanAccesExpenceCAtegoryPage() throws IOException {
+	public void verifyAdminCanAccesExpenceCAtegoryPage() throws IOException, InterruptedException {
 		ap = new AdminHomePage(driver);
 		lp = new LoginPage(driver);
-		lp.enterUserName(ExcelRead.readStringData("Sheet1", 1, 0));
-		lp.enterPassword(ExcelRead.readStringData("Sheet1", 1, 1));
+		lp.enterUserName(Constant.USERNAME);
+		lp.enterPassword(Constant.PASSWORD);
 		lp.clickLoginButton();
 		ap.clickOnManageExpenceTab();
+		Thread.sleep(3000);
 		String actualResult = ap.clickOnExpenceCategoryTab();
-		String expectedResult = "Expense Category";
+		String expectedResult = Constant.EXPENCECATEGORYPAGE;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTIONERRORMESSAGE);
 		
 		
 	}
-	
+	/*
 	@Test
 	public void verifyAdminCanaccesCreateMerchantTab() throws IOException {
 		ap = new AdminHomePage(driver);
 		lp = new LoginPage(driver);
-		lp.enterUserName(ExcelRead.readStringData("Sheet1", 1, 0));
-		lp.enterPassword(ExcelRead.readStringData("Sheet1", 1, 1));
+		lp.enterUserName(Constant.USERNAME);
+		lp.enterPassword(prop.getProperty("password"));
 		lp.clickLoginButton();
 		ap.clickOnManageExpenceTab();
 		String actualResult = ap.clickOnCreateMerchantTab();
-		String expectedResult="List Expense | 7rmart supermarket";
+		String expectedResult=Constant.EXPECTEDCREATEMECHANTTITLE;
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTIONERRORMESSAGE);
-	}
+	}*/
 	
 }

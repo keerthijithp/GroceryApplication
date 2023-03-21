@@ -7,6 +7,7 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.util.List;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -73,6 +74,15 @@ public class GeneralUtilities {
 		}
 		return index;
 
+	}
+	public void pageScroll(WebDriver driver,WebElement element) {
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("window.scrollTo(0,"+element.getLocation().y+")" );
+		
+	}
+	public boolean getExpectedResultAlert(WebElement element, String text) {
+		String alert=element.getText();
+		return alert.contains(text);
 	}
 	
 	

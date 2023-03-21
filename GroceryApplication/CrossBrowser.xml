@@ -1,12 +1,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="MyTestSuite" configfailurepolicy="skip">
-	<test name="ChromeTest">
+<listeners>
+<listener class-name="utilities.ExtentReportUtils" />
+</listeners>
+	<test name="SmokeTest">
 	<parameter name="browser" value="Chrome"></parameter>
 		<classes>
-			<class name="testCases.LoginPageTestCases"></class>
+			<class name="testCases.AdminPageTestCases">
+			
+			</class>
 		</classes>
 	</test>
-	<test name="EdgeTest">
+	<test name="SanityTests">
 	<parameter name="browser" value="Edge"></parameter>
 		<classes>
 			<class name="testCases.LoginPageTestCases"></class>
