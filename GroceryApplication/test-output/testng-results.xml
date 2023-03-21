@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-21T14:41:30Z" name="MyTestSuite" finished-at="2023-03-21T14:41:53Z" duration-ms="22424">
+  <suite started-at="2023-03-21T15:41:15Z" name="MyTestSuite" finished-at="2023-03-21T15:42:12Z" duration-ms="57086">
     <groups>
+      <group name="Regression">
+        <method signature="AdminPageTestCases.verifyAdminCanAccesExpenceCAtegoryPage()[pri:0, instance:testCases.AdminPageTestCases@64cd705f]" name="verifyAdminCanAccesExpenceCAtegoryPage" class="testCases.AdminPageTestCases"/>
+        <method signature="AdminPageTestCases.verifyingPageTiTleOfAdminHomePage()[pri:0, instance:testCases.AdminPageTestCases@64cd705f]" name="verifyingPageTiTleOfAdminHomePage" class="testCases.AdminPageTestCases"/>
+      </group> <!-- Regression -->
+      <group name="Critical">
+        <method signature="AdminPageTestCases.verifyLogoutButton()[pri:0, instance:testCases.AdminPageTestCases@64cd705f]" name="verifyLogoutButton" class="testCases.AdminPageTestCases"/>
+        <method signature="LoginPageTestCases.verifyCheckboxRemeneberMeIsSelected()[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" name="verifyCheckboxRemeneberMeIsSelected" class="testCases.LoginPageTestCases"/>
+        <method signature="LoginPageTestCases.verifyLoginWithValidCredentials()[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" name="verifyLoginWithValidCredentials" class="testCases.LoginPageTestCases"/>
+      </group> <!-- Critical -->
     </groups>
-    <test started-at="2023-03-21T14:41:30Z" name="ChromeTest" finished-at="2023-03-21T14:41:53Z" duration-ms="22424">
-      <class name="testCases.ManageSliderPageTestCases">
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testCases.ManageSliderPageTestCases@17046283]" started-at="2023-03-21T14:41:30Z" name="beforeMethod" finished-at="2023-03-21T14:41:35Z" duration-ms="4653" status="PASS">
+    <test started-at="2023-03-21T15:41:15Z" name="SmokeTest" finished-at="2023-03-21T15:41:32Z" duration-ms="16833">
+      <class name="testCases.AdminPageTestCases">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testCases.AdminPageTestCases@64cd705f]" started-at="2023-03-21T15:41:16Z" name="beforeMethod" finished-at="2023-03-21T15:41:19Z" duration-ms="3647" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,22 +27,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyAdminCanAddNewSlider()[pri:0, instance:testCases.ManageSliderPageTestCases@17046283]" started-at="2023-03-21T14:41:35Z" name="verifyAdminCanAddNewSlider" finished-at="2023-03-21T14:41:41Z" duration-ms="5602" status="PASS">
+        <test-method signature="verifyAdminCanAccesExpenceCAtegoryPage()[pri:0, instance:testCases.AdminPageTestCases@64cd705f]" started-at="2023-03-21T15:41:19Z" name="verifyAdminCanAccesExpenceCAtegoryPage" finished-at="2023-03-21T15:41:24Z" duration-ms="4938" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAdminCanAddNewSlider -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.ManageSliderPageTestCases@17046283]" started-at="2023-03-21T14:41:41Z" name="afterMethod" finished-at="2023-03-21T14:41:41Z" duration-ms="250" status="PASS">
+        </test-method> <!-- verifyAdminCanAccesExpenceCAtegoryPage -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.AdminPageTestCases@64cd705f]" started-at="2023-03-21T15:41:24Z" name="afterMethod" finished-at="2023-03-21T15:41:25Z" duration-ms="271" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyAdminCanAddNewSlider status=SUCCESS method=ManageSliderPageTestCases.verifyAdminCanAddNewSlider()[pri:0, instance:testCases.ManageSliderPageTestCases@17046283] output={null}]]]>
+                <![CDATA[[TestResult name=verifyAdminCanAccesExpenceCAtegoryPage status=SUCCESS method=AdminPageTestCases.verifyAdminCanAccesExpenceCAtegoryPage()[pri:0, instance:testCases.AdminPageTestCases@64cd705f] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testCases.ManageSliderPageTestCases@17046283]" started-at="2023-03-21T14:41:41Z" name="beforeMethod" finished-at="2023-03-21T14:41:43Z" duration-ms="2386" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testCases.AdminPageTestCases@64cd705f]" started-at="2023-03-21T15:41:25Z" name="beforeMethod" finished-at="2023-03-21T15:41:27Z" duration-ms="2273" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -44,22 +53,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyAdminCanChangeTheStatusOfALinkInManageSliderPage()[pri:0, instance:testCases.ManageSliderPageTestCases@17046283]" started-at="2023-03-21T14:41:43Z" name="verifyAdminCanChangeTheStatusOfALinkInManageSliderPage" finished-at="2023-03-21T14:41:49Z" duration-ms="5531" status="PASS">
+        <test-method signature="verifyLogoutButton()[pri:0, instance:testCases.AdminPageTestCases@64cd705f]" started-at="2023-03-21T15:41:27Z" name="verifyLogoutButton" finished-at="2023-03-21T15:41:28Z" duration-ms="1420" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyAdminCanChangeTheStatusOfALinkInManageSliderPage -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.ManageSliderPageTestCases@17046283]" started-at="2023-03-21T14:41:49Z" name="afterMethod" finished-at="2023-03-21T14:41:49Z" duration-ms="271" status="PASS">
+        </test-method> <!-- verifyLogoutButton -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.AdminPageTestCases@64cd705f]" started-at="2023-03-21T15:41:28Z" name="afterMethod" finished-at="2023-03-21T15:41:29Z" duration-ms="248" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyAdminCanChangeTheStatusOfALinkInManageSliderPage status=SUCCESS method=ManageSliderPageTestCases.verifyAdminCanChangeTheStatusOfALinkInManageSliderPage()[pri:0, instance:testCases.ManageSliderPageTestCases@17046283] output={null}]]]>
+                <![CDATA[[TestResult name=verifyLogoutButton status=SUCCESS method=AdminPageTestCases.verifyLogoutButton()[pri:0, instance:testCases.AdminPageTestCases@64cd705f] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testCases.ManageSliderPageTestCases@17046283]" started-at="2023-03-21T14:41:49Z" name="beforeMethod" finished-at="2023-03-21T14:41:51Z" duration-ms="2258" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testCases.AdminPageTestCases@64cd705f]" started-at="2023-03-21T15:41:29Z" name="beforeMethod" finished-at="2023-03-21T15:41:31Z" duration-ms="2263" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -70,22 +79,232 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyBagroundColorOfRestButton()[pri:0, instance:testCases.ManageSliderPageTestCases@17046283]" started-at="2023-03-21T14:41:51Z" name="verifyBagroundColorOfRestButton" finished-at="2023-03-21T14:41:53Z" duration-ms="1218" status="PASS">
+        <test-method signature="verifyingPageTiTleOfAdminHomePage()[pri:0, instance:testCases.AdminPageTestCases@64cd705f]" started-at="2023-03-21T15:41:31Z" name="verifyingPageTiTleOfAdminHomePage" finished-at="2023-03-21T15:41:32Z" duration-ms="843" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyBagroundColorOfRestButton -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.ManageSliderPageTestCases@17046283]" started-at="2023-03-21T14:41:53Z" name="afterMethod" finished-at="2023-03-21T14:41:53Z" duration-ms="233" status="PASS">
+        </test-method> <!-- verifyingPageTiTleOfAdminHomePage -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.AdminPageTestCases@64cd705f]" started-at="2023-03-21T15:41:32Z" name="afterMethod" finished-at="2023-03-21T15:41:32Z" duration-ms="244" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyBagroundColorOfRestButton status=SUCCESS method=ManageSliderPageTestCases.verifyBagroundColorOfRestButton()[pri:0, instance:testCases.ManageSliderPageTestCases@17046283] output={null}]]]>
+                <![CDATA[[TestResult name=verifyingPageTiTleOfAdminHomePage status=SUCCESS method=AdminPageTestCases.verifyingPageTiTleOfAdminHomePage()[pri:0, instance:testCases.AdminPageTestCases@64cd705f] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- testCases.ManageSliderPageTestCases -->
-    </test> <!-- ChromeTest -->
+      </class> <!-- testCases.AdminPageTestCases -->
+    </test> <!-- SmokeTest -->
+    <test started-at="2023-03-21T15:41:33Z" name="SanityTests" finished-at="2023-03-21T15:42:12Z" duration-ms="39509">
+      <class name="testCases.LoginPageTestCases">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:41:33Z" name="beforeMethod" finished-at="2023-03-21T15:41:43Z" duration-ms="9857" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyCheckboxRemeneberMeIsSelected()[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:41:43Z" name="verifyCheckboxRemeneberMeIsSelected" finished-at="2023-03-21T15:41:43Z" duration-ms="117" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCheckboxRemeneberMeIsSelected -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:41:43Z" name="afterMethod" finished-at="2023-03-21T15:41:43Z" duration-ms="348" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCheckboxRemeneberMeIsSelected status=SUCCESS method=LoginPageTestCases.verifyCheckboxRemeneberMeIsSelected()[pri:0, instance:testCases.LoginPageTestCases@7722c3c3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:41:44Z" name="beforeMethod" finished-at="2023-03-21T15:41:51Z" duration-ms="7232" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyLoginWithInvalidCredentials(java.lang.String, java.lang.String)[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:41:51Z" name="verifyLoginWithInvalidCredentials" data-provider="dataProvider" finished-at="2023-03-21T15:41:53Z" duration-ms="1860" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Anu]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[assd]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginWithInvalidCredentials -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:41:53Z" name="afterMethod" finished-at="2023-03-21T15:41:53Z" duration-ms="364" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyLoginWithInvalidCredentials status=SUCCESS method=LoginPageTestCases.verifyLoginWithInvalidCredentials(java.lang.String, java.lang.String)[pri:0, instance:testCases.LoginPageTestCases@7722c3c3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:41:53Z" name="beforeMethod" finished-at="2023-03-21T15:41:57Z" duration-ms="3024" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyLoginWithInvalidCredentials(java.lang.String, java.lang.String)[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:41:57Z" name="verifyLoginWithInvalidCredentials" data-provider="dataProvider" finished-at="2023-03-21T15:41:57Z" duration-ms="617" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Keerthi]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[dsdsad]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginWithInvalidCredentials -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:41:57Z" name="afterMethod" finished-at="2023-03-21T15:41:57Z" duration-ms="310" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyLoginWithInvalidCredentials status=SUCCESS method=LoginPageTestCases.verifyLoginWithInvalidCredentials(java.lang.String, java.lang.String)[pri:0, instance:testCases.LoginPageTestCases@7722c3c3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:41:57Z" name="beforeMethod" finished-at="2023-03-21T15:42:00Z" duration-ms="2949" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyLoginWithValidCredentials()[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:42:00Z" name="verifyLoginWithValidCredentials" finished-at="2023-03-21T15:42:01Z" duration-ms="973" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginWithValidCredentials -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:42:01Z" name="afterMethod" finished-at="2023-03-21T15:42:02Z" duration-ms="301" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyLoginWithValidCredentials status=SUCCESS method=LoginPageTestCases.verifyLoginWithValidCredentials()[pri:0, instance:testCases.LoginPageTestCases@7722c3c3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:42:02Z" name="beforeMethod" finished-at="2023-03-21T15:42:05Z" duration-ms="3718" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyTheBacgroundColourOfSignInButton()[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:42:05Z" name="verifyTheBacgroundColourOfSignInButton" finished-at="2023-03-21T15:42:05Z" duration-ms="49" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTheBacgroundColourOfSignInButton -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:42:05Z" name="afterMethod" finished-at="2023-03-21T15:42:06Z" duration-ms="267" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyTheBacgroundColourOfSignInButton status=SUCCESS method=LoginPageTestCases.verifyTheBacgroundColourOfSignInButton()[pri:0, instance:testCases.LoginPageTestCases@7722c3c3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:42:06Z" name="beforeMethod" finished-at="2023-03-21T15:42:09Z" duration-ms="2851" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyTheTextOfSignInButton()[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:42:09Z" name="verifyTheTextOfSignInButton" finished-at="2023-03-21T15:42:09Z" duration-ms="53" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTheTextOfSignInButton -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:42:09Z" name="afterMethod" finished-at="2023-03-21T15:42:09Z" duration-ms="291" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyTheTextOfSignInButton status=SUCCESS method=LoginPageTestCases.verifyTheTextOfSignInButton()[pri:0, instance:testCases.LoginPageTestCases@7722c3c3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String)[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:42:09Z" name="beforeMethod" finished-at="2023-03-21T15:42:12Z" duration-ms="2981" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyTheTextOftitle7MartSupermarket()[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:42:12Z" name="verifyTheTextOftitle7MartSupermarket" finished-at="2023-03-21T15:42:12Z" duration-ms="54" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTheTextOftitle7MartSupermarket -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testCases.LoginPageTestCases@7722c3c3]" started-at="2023-03-21T15:42:12Z" name="afterMethod" finished-at="2023-03-21T15:42:12Z" duration-ms="266" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyTheTextOftitle7MartSupermarket status=SUCCESS method=LoginPageTestCases.verifyTheTextOftitle7MartSupermarket()[pri:0, instance:testCases.LoginPageTestCases@7722c3c3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- testCases.LoginPageTestCases -->
+    </test> <!-- SanityTests -->
   </suite> <!-- MyTestSuite -->
 </testng-results>

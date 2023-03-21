@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [My Test Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="utilities.ExtentReportUtils"/>
+  </listeners>
+  <test thread-count="5" name="My Test(failed)">
+    <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="testCases.ManageOfferCodeTestCases">
+        <methods>
+          <include name="verifyIfAdminAbleToaddNewOfferCode"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testCases.ManageOfferCodeTestCases -->
+      <class name="testCases.PushNotificationTestCases">
+        <methods>
+          <include name="verifyIfTheAdminCanSendPushMessageNotification"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testCases.PushNotificationTestCases -->
+      <class name="testCases.ManageDeliveryBoyPageTestCases">
+        <methods>
+          <include name="verifyAdminCanChangeThestatusOfDeliveryBoy"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testCases.ManageDeliveryBoyPageTestCases -->
+      <class name="testCases.ManageSliderPageTestCases">
+        <methods>
+          <include name="verifyAdminCanAddNewSlider"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="verifyAdminCanChangeTheStatusOfALinkInManageSliderPage"/>
+        </methods>
+      </class> <!-- testCases.ManageSliderPageTestCases -->
+      <class name="testCases.ListPagesTestCases">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="verifyAdminCanAddNewPages"/>
+        </methods>
+      </class> <!-- testCases.ListPagesTestCases -->
+      <class name="testCases.LoginPageTestCases">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="verifyLoginWithInvalidCredentials" invocation-numbers="0 1"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testCases.LoginPageTestCases -->
+      <class name="testCases.AdminUsersPageTestCases">
+        <methods>
+          <include name="verifyifAdminCAnDeleteUsers"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testCases.AdminUsersPageTestCases -->
+    </classes>
+  </test> <!-- My Test(failed) -->
+</suite> <!-- Failed suite [My Test Suite] -->

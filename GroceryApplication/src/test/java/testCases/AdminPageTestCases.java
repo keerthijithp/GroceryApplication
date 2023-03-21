@@ -14,7 +14,7 @@ public class AdminPageTestCases extends BaseClass {
 	AdminHomePage ap;
 	LoginPage lp;
 
-	@Test
+	@Test(groups = {"Critical"} )
 	public void verifyLogoutButton() throws IOException {
 		ap = new AdminHomePage(driver);
 		lp = new LoginPage(driver);
@@ -27,7 +27,7 @@ public class AdminPageTestCases extends BaseClass {
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTIONERRORMESSAGE);
 	}
 
-	@Test
+	@Test(groups = {"Regression"} )
 	public void verifyingPageTiTleOfAdminHomePage() throws IOException {
 
 		ap = new AdminHomePage(driver);
@@ -39,7 +39,7 @@ public class AdminPageTestCases extends BaseClass {
 		Assert.assertEquals(actualResult, expectedResult, Constant.ASSERTIONERRORMESSAGE);
 	}
 	
-	@Test
+	@Test(groups = {"Regression"} )
 	public void verifyAdminCanAccesExpenceCAtegoryPage() throws IOException, InterruptedException {
 		ap = new AdminHomePage(driver);
 		lp = new LoginPage(driver);

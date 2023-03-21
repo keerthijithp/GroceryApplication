@@ -6,9 +6,12 @@
 	<test name="SmokeTest">
 	<parameter name="browser" value="Chrome"></parameter>
 		<classes>
-			<class name="testCases.LoginPageTestCases">
+			<class name="testCases.LoginPageTestCases"></class>
+			<class name="testCases.ManageDeliveryBoyPageTestCases"></class>
+<class name="testCases.ManageOfferCodeTestCases"></class>
 			
-			</class>
+			
+			
 		</classes>
 	</test>
 	<test name="SanityTest">

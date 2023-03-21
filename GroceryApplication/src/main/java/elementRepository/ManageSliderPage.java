@@ -57,13 +57,13 @@ public String getTextOfAlertMessage() {
 	return gu.getElementText(alert);
 }
 public void getLocator() throws InterruptedException {
-	int index=gu.getTableLocatorValue(linkList, "www.amazon.com");
-	String locator="//table[@class='table table-bordered table-hover table-sm']//tbody//tr["+(index+1)+"]//td[3]//a";
+	int index=gu.getTableLocatorValue(linkList, "abcd");
+	String locator="//table[@class='table table-bordered table-hover table-sm']//tbody//tr["+(index+1)+"]//td[3]//a//span";
 	
-	WebElement Link=driver.findElement(By.xpath(locator));
+	WebElement link=driver.findElement(By.xpath(locator));
 	//we.Stalenesswait(driver, Link);
 	Thread.sleep(3000);
-	Link.click();
+	link.click();
 	
 }
 public String getResetBtnBgColor() {

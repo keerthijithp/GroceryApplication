@@ -13,6 +13,8 @@
 	</groups>
 	<classes>
 			<class name="testCases.LoginPageTestCases"></class>
+			<class name="testCases.ManageDeliveryBoyPageTestCases"></class>
+<class name="testCases.ManageOfferCodeTestCases"></class>
 		</classes>
 	</test>
 </suite>
